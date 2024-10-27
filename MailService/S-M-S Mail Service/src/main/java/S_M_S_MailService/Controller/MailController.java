@@ -19,4 +19,9 @@ public class MailController {
         emailService.sendSimpleEmail(to, subject, text);
         return "Email sent successfully";
     }
+
+    @GetMapping("/test")
+    public  String hello(){
+        return "hello bro from mail service";
+    }
 }
