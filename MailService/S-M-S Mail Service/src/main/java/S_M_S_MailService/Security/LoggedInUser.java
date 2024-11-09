@@ -1,6 +1,5 @@
 package S_M_S_MailService.Security;
 
-import S_M_S_MailService.Security.Entity.Users;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,16 +7,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
+
 public class LoggedInUser implements UserDetails {
 
     private  Users users;
 
-    public LoggedInUser(Users users){
+     LoggedInUser(Users users){
         this.users = users;
     }
 
     public  Users getUsers(){
-        return users;
+         return users;
     }
 
     @Override

@@ -1,8 +1,6 @@
-package S_M_S_MailService.Security.Service;
+package S_M_S_MailService.Security;
 
-import S_M_S_MailService.Security.Entity.Users;
-import S_M_S_MailService.Security.LoggedInUser;
-import S_M_S_MailService.Security.Repo.UsersRepo;
+import S_M_S_MailService.FeignService.DatabaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,14 +8,16 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserDeatilsServices  implements UserDetailsService {
+public class UserDeatilsServices implements UserDetailsService {
 
-    @Autowired
-    private UsersRepo usersRepo;
+
+   @Autowired
+   DatabaseService databaseService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users user = usersRepo.findByEmail(username);
+
+        Users user = databaseService.findByMail(username);
 
         if(user == null){
             System.out.println(" user not found ");

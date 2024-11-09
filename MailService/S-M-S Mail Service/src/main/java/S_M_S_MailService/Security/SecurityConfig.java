@@ -10,7 +10,6 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -19,7 +18,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -28,9 +26,9 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)
+        http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/sendMail" ,"/send-reset-PasswordMail").permitAll()
+                        .requestMatchers("auth/login", "auth/register" , "/send-reset-PasswordMail").permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .addFilterBefore(JwtFilter , UsernamePasswordAuthenticationFilter.class);
@@ -51,4 +49,12 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
     }
 
+
+
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//
+//        UserDetails userDetails1 = User.withDefaultPasswordEncoder().username("shailendra").password("123").roles("Admin").build();
+//        return new  InMemoryUserDetailsManager( userDetails1);
+//    }
 }
