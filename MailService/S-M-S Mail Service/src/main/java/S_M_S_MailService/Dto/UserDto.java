@@ -1,4 +1,4 @@
-package S_M_S_MailService.DTO;
+package S_M_S_MailService.Dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

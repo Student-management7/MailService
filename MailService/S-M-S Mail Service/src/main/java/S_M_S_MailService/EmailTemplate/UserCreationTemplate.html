@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account Created</title>
+    <style>
+        body { font-family: Arial, sans-serif; color: #333333; }
+        .container { width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; }
+        .header { font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; margin-top: 20px; }
+        .info { font-size: 16px; margin-bottom: 20px; }
+        .table { width: 100%; border-collapse: collapse; }
+        .table th, .table td { padding: 10px; border: 1px solid #dddddd; text-align: left; }
+        .table th { background-color: #f4f4f4; font-weight: bold; }
+        .footer { margin-top: 30px; font-size: 14px; text-align: center; color: #666666; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">Subuser Account Created</div>
+    <p>Hi [Subuser's Name],</p>
+    <p>Your new account has been created successfully! Below are your login details and permissions:</p>
+
+    <div class="info">
+        <strong>Username:</strong> [username]<br>
+        <strong>Password:</strong> [password]
+    </div>
+
+    <div class="section-title">Permissions</div>
+
+    <table class="table">
+        <tr><th>Category</th><th>Permission</th><th>Description</th></tr>
+
+        <!-- Student Permissions -->
+        <tr><td rowspan="4">Student</td><td>View Student</td><td>{{View Student P}}</td></tr>
+        <tr><td>Create Student</td><td>{{Create Student P}}</td></tr>
+        <tr><td>Update Student</td><td>{{Update Student P}}</td></tr>
+        <tr><td>Delete Student</td><td>{{Delete Student P}}</td></tr>
+
+        <!-- Attendance Permissions -->
+        <tr><td rowspan="2">Attendance</td><td>View Attendance</td><td>{{View Attendance P}}</td></tr>
+        <tr><td>Mark Attendance</td><td>{{Mark Attendance P}}</td></tr>
+
+        <!-- Fees Permissions -->
+        <tr><td rowspan="2">Fees</td><td>View Fees</td><td>{{View Fees P}}</td></tr>
+        <tr><td>Collect Fees</td><td>{{Collect Fees P}}</td></tr>
+
+        <!-- Teacher Permissions -->
+        <tr><td rowspan="5">Teacher</td><td>View Teacher</td><td>{{View Teacher P}}</td></tr>
+        <tr><td>Create Teacher</td><td>{{Create Teacher P}}</td></tr>
+        <tr><td>Update Teacher</td><td>{{Update Teacher P}}</td></tr>
+        <tr><td>Delete Teacher</td><td>{{Delete Teacher P}}</td></tr>
+        <tr><td>Assign Subject</td><td>{{Assign Subject P}}</td></tr>
+
+        <!-- Course Permissions -->
+        <tr><td rowspan="4">Course</td><td>View Course</td><td>{{View Course P}}</td></tr>
+        <tr><td>Create Course</td><td>{{Create Course P}}</td></tr>
+        <tr><td>Update Course</td><td>{{Update Course P}}</td></tr>
+        <tr><td>Delete Course</td><td>{{Delete Course P}}</td></tr>
+
+        <!-- Exam Permissions -->
+        <tr><td rowspan="2">Exam</td><td>Schedule Exam</td><td>{{Schedule Exam P}}</td></tr>
+        <tr><td>View Result</td><td>{{View Result P}}</td></tr>
+
+        <!-- Event Permissions -->
+        <tr><td rowspan="4">Event</td><td>View Events</td><td>{{View Events P}}</td></tr>
+        <tr><td>Create Event</td><td>{{Create Event P}}</td></tr>
+        <tr><td>Update Event</td><td>{{Update Event P}}</td></tr>
+        <tr><td>Delete Event</td><td>{{Delete Event P}}</td></tr>
+
+        <!-- Report Permissions -->
+        <tr><td rowspan="3">Report</td><td>View Reports</td><td>{{View Reports P}}</td></tr>
+        <tr><td>Generate Reports</td><td>{{Generate Reports P}}</td></tr>
+        <tr><td>Export Reports</td><td>{{Export Reports P}}</td></tr>
+    </table>
+
+    <div class="footer">
+        Please log in at <a href="[your company's login URL]">[your company's login URL]</a> to get started.<br>
+        <br>Best Regards,<br>[Your Company's Name]<br>[Your Contact Information]
+    </div>
+</div>
+</body>
+</html>
